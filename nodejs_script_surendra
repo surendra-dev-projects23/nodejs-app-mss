@@ -1,0 +1,25 @@
+node {
+	stage('CheckOutCode') {
+		git credentialsId: '2aeb9b09-28ec-4788-abc6-a1c884c78294', url: 'https://github.com/surendra-dev-projects23/nodejs-app-mss.git'
+	}
+	stage ('Build') {
+			nodejs(nodeJSInstallationName: 'nodejs21.6.1') {
+				sh "npm install"
+		    }
+	}
+	stage ('ExecuteSonarQubeReport') {
+			nodejs(nodeJSInstallationName: 'nodejs21.6.1') {
+				sh "npm run sonar"
+		    }
+	}
+	/*stage ('uploadIntoNexusRepo') {
+			nodejs(nodeJSInstallationName: 'nodejs21.6.1') {
+				sh "npm publish"
+		    }
+	}*/
+	stage ('RunNodejsAPP') {
+				sh "npm run start"
+		    }
+	}
+	
+}
