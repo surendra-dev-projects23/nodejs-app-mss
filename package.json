@@ -4,7 +4,7 @@
   "description": "This Project explains all Node JS examples",
   "main": "app.js",
   "publishConfig": {
-    "registry": "http://15.206.88.86:9980/surendraexportspvtltd/repository/mssnodejsrepo/"
+    "registry": "http://52.66.7.130:9980/surendraexportspvtltd/repository/mssnodejsrepo/"
   },
   
   "scripts": {
